@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid lightgray;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 4px;
+        }
+
+        th {
+            background-color: darkblue;
+            border: 1px solid darkblue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="date" />
+    Oppgaver
+    <ol>
+        <li><del>
+                Legg til person. Må kunne angis når man lager ny oppgave og må
+                kunne redigeres
+        </li></del>
+        <li>Legg til kolonne for frist. Bruk input-tag med type="date".
+            Konvertering til visningsformat: <tt>new Date("2019-02-13").toLocaleDateString()</tt>
+        </li>
+        <li>Lag kolonne for "gjort dato" som fylles ut automatisk når man
+            trykker på checkboxen for at det er gjort.</li>
+
+
+    </ol>
+    <table id="tasksTable"></table>
+    <p>
+        <input id="taskDescription" type="text" placeholder="Oppgave" /><input id="taskWho" type="text"
+            placeholder="Navn" /><input id="taskDoneBy" type="date"><button onclick="addTask()">Legg
+            til oppgave</button>
+    </p>
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+    <script src="controller.js"></script>
+</body>
+
+</html>
