@@ -4,15 +4,26 @@ function addTask() {
         description: taskDescriptionInput.value,
         isDone: false,
         who: taskWhoInput.value,
-        doneBy: doneByInput.value,
+        doneBy: doneByInput.value,  // doneByInput.value
+        finished: '',
     });
     taskDescriptionInput.value = '';
     taskWhoInput.value = '';
     show();
 }
 
+function setDate() {
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+
+    return today = yyyy + '-' + mm + '-' + dd;
+}
+
 function changeIsDone(checkbox, index) {
     tasks[index].isDone = checkbox.checked;
+    tasks[index].finished = setDate();
     show();
 }
 
@@ -38,5 +49,6 @@ function updateTask(index) {
     task.who = inputTagWho.value;
     task.doneBy = inputDoneBy.value;
     task.editMode = false;
+    task.finished = task.isDone ? setDate() : '';
     show();
 }

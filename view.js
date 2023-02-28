@@ -9,6 +9,7 @@ function show() {
                     <th>Gjøres av</th>
                     <th>Frist</th>
                     <th>Gjort</th>
+                    <th>Gjort dato</th>
                     <th></th>
                 </tr>`;
     for (let i = 0; i < tasks.length; i++) {
@@ -26,6 +27,7 @@ function createHtmlRow(i) {
                     <td>${task.who}</td>
                     <td>${task.doneBy}</td>
                     <td><input onchange="changeIsDone(this, ${i})" type="checkbox" ${checkedHtml} /></td>
+                    <td>${task.finished}</td>
                     <td>
                         <button onclick="deleteTask(${i})">Slett</button>
                         <button onclick="editTask(${i})">Rediger</button>
@@ -37,6 +39,7 @@ function createHtmlRow(i) {
                     <td><input id="editWho${i}" type="text" value="${task.who}"/></td>
                     <td><input id="editDoneBy${i}" type="date" value="${task.doneBy}"/></td>
                     <td><input onchange="changeIsDone(this, ${i})" type="checkbox" ${checkedHtml}/></td>
+                    <td>${task.finished}</td>
                     <td>
                         <button onclick="updateTask(${i})">Lagre</button>
                     </td>
