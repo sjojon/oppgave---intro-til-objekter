@@ -43,33 +43,3 @@ function createHtmlRow(i) {
                 </tr>
                 `;
 }
-
-function changeIsDone(checkbox, index) {
-    tasks[index].isDone = checkbox.checked;
-    show();
-}
-
-function deleteTask(index) {
-    tasks.splice(index, 1);
-    show();
-}
-
-function editTask(index) {
-    tasks[index].editMode = true;
-    show();
-}
-
-function updateTask(index) {
-    const id = `editDescription${index}`;
-    const id2 = `editWho${index}`;
-    const date = `editDoneBy${index}`;
-    const inputTag = document.getElementById(id);
-    const inputTagWho = document.getElementById(id2);
-    const inputDoneBy = document.getElementById(date);
-    const task = tasks[index];
-    task.description = inputTag.value;
-    task.who = inputTagWho.value;
-    task.doneBy = inputDoneBy.value;
-    task.editMode = false;
-    show();
-}
