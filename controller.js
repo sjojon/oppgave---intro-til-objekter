@@ -1,8 +1,4 @@
 // Controller
-var taskDescriptionInput = document.getElementById('taskDescription');
-let taskWhoInput = document.getElementById('taskWho');
-let doneByInput = document.getElementById('taskDoneBy');
-
 function addTask() {
     tasks.push({
         description: taskDescriptionInput.value,
